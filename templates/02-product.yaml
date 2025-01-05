@@ -15,8 +15,8 @@ spec:
     apicastSelfManaged:
       authentication:
         userkey: {}
-      productionPublicBaseURL: 'http://example-test-service-changed.com'
-      stagingPublicBaseURL: 'http://example-test-service-changed.com'
+      productionPublicBaseURL: 'http://example-test-service.com'
+      stagingPublicBaseURL: 'http://example-test-service.com'
   backendUsages:
     example-service-backend:
       path: /
