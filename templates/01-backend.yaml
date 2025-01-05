@@ -1,0 +1,18 @@
+apiVersion: capabilities.3scale.net/v1beta1
+kind: Backend
+metadata:
+  name: example-service-backend
+  namespace: example-service
+spec:
+  description: Backend for {app-name} at {app-ns}
+  metrics:
+    hits:
+      description: Number of API hits
+      friendlyName: Hits
+      unit: hit
+  name: example-service-backend
+  privateBaseURL: 'http://example-service.example-service.svc.clusterset.local:80'
+  systemName: example-service-backend 
+  providerAccountRef:
+    name: menora-prod-admin-secret
+

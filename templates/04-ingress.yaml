@@ -1,0 +1,19 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+ name: example-service-ingress
+ namespace: 3scale
+spec:
+ ingressClassName: nginx
+ rules:
+   - host: example-test-service.com
+     http:
+       paths:
+         - path: /
+           pathType: Prefix
+           backend:
+             service:
+               name: apicast-staging
+               port:
+                 number: 8080
+

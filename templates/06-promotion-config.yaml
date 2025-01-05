@@ -1,0 +1,11 @@
+apiVersion: capabilities.3scale.net/v1beta1
+kind: ProxyConfigPromote
+metadata:
+  name: proxyconfigpromote-menora-prod
+  namespace: example-service
+spec:
+  productCRName: example-service-product 
+  production: true
+  providerAccountRef:
+    name: menora-prod-tenant-secret
+

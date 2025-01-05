@@ -1,0 +1,48 @@
+apiVersion: capabilities.3scale.net/v1beta1
+kind: Product
+metadata:
+  name: example-service-product
+  namespace: example-service
+spec:
+  metrics:
+    hits:
+      description: Number of API hits
+      friendlyName: Hits
+      unit: hit
+  deployment:
+    apicastSelfManaged:
+      authentication:
+        userkey: {}
+      productionPublicBaseURL: 'http://example-test-service.com'
+      stagingPublicBaseURL: 'http://example-test-service.com'
+  backendUsages:
+    example-service-backend:
+      path: /
+  mappingRules:
+    - httpMethod: GET
+      increment: 1
+      metricMethodRef: hits
+      pattern: /
+    - httpMethod: PUT
+      increment: 1
+      metricMethodRef: hits
+      pattern: /
+  name: example-service-product
+  policies:
+    - configuration:
+        auth_type: user_key
+        user_key: '12345678'
+      enabled: true
+      name: default_credentials
+      version: builtin
+    - configuration: {}
+      enabled: true
+      name: apicast
+      version: builtin
+  systemName: {{ printf "%s-%s" "example-service-product" (randAlphaNum 8) | quote }}
+  applicationPlans:
+    default: {}
+  description: Product for API for {app-name} at {app-ns}
+  providerAccountRef:
+    name: menora-prod-admin-secret
+
