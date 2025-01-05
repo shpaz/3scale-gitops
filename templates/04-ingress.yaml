@@ -1,6 +1,8 @@
 kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
+  annotations: 
+    argocd.argoproj.io/sync-wave: "2"
  name: example-service-ingress
  namespace: 3scale
 spec:
