@@ -1,0 +1,12 @@
+kind: ApplicationAuth
+apiVersion: capabilities.3scale.net/v1beta1
+metadata:
+  name: applicationauth-menora-prod
+  namespace: example-service
+spec:
+  applicationCRName: example-service-app
+  authSecretRef:
+    name: menora-prod-appauth-secret
+  generateSecret: false
+  providerAccountRef:
+    name: menora-prod-admin-secret
