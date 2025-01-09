@@ -5,6 +5,8 @@ metadata:
     argocd.argoproj.io/hook: PostSync
     argocd.argoproj.io/sync-wave: "6"
   name: example-service-ingress
+  labels:
+    dummy-label: dummy-value
   namespace: 3scale
 spec:
  ingressClassName: nginx
