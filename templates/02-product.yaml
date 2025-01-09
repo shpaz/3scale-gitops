@@ -42,7 +42,7 @@ spec:
       enabled: true
       name: apicast
       version: builtin
-  systemName: example-system-product-{{ randAlphaNum 6 }}
+  systemName: {{ printf "%s-%s" "example-service-product" (randAlphaNum 8) | quote }}
   applicationPlans:
     default: {}
   description: Product for API for {app-name} at {app-ns}
