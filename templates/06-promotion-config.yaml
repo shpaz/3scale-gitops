@@ -8,6 +8,4 @@ metadata:
 spec:
   productCRName: example-service-product 
   production: true
-  providerAccountRef:
-    name: menora-prod-tenant-secret
 
