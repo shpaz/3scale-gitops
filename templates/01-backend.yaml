@@ -13,7 +13,7 @@ spec:
       friendlyName: Hits
       unit: hit
   name: example-service-backend
-  privateBaseURL: 'http://example-service.example-service.svc.clusterset.local:8000'
+  privateBaseURL: 'http://example-service.example-service.svc.clusterset.local:80'
   systemName: example-service-backend 
   providerAccountRef:
     name: menora-prod-admin-secret
