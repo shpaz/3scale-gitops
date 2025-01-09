@@ -13,6 +13,4 @@ spec:
   name: exmaple-service-app
   productCR:
     name: example-service-product 
-  providerAccountRef:
-    name: menora-prod-admin-secret
 
