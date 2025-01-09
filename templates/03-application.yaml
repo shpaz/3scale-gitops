@@ -2,7 +2,6 @@ apiVersion: capabilities.3scale.net/v1beta1
 kind: Application
 metadata:
   annotations:
-    argocd.argoproj.io/hook: Sync 
     argocd.argoproj.io/sync-wave: "2"
   namespace: example-service 
   name: example-service-app
